@@ -13,6 +13,7 @@ Root root = om.readValue(myJsonString), Root.class); */
 public class Centres{
     private List<Center> centers;
 
+
     public List<Center> getCenters() {
         return centers;
     }
