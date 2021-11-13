@@ -1,26 +1,36 @@
 package DS;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Demo_ArrayList {
     public static void main(String[] args) {
-        ArrayList<Integer> l1 = new ArrayList<>();
-        ArrayList<Integer> l2 = new ArrayList<>();
-
-        l1.add(0);
-        l1.add(1);
-        l1.add(2);
-        l1.add(0,3);
-        l2.add(00);
-        l2.add(11);
-        l2.add(22);
-
-        l1.addAll(l2);
-        for (int i = 0; i < l1.size(); i++)
+        Scanner scanner = new Scanner(System.in);
+        int i =0;
+        int num =0;
+        //Empty String
+        String  primeNumbers = "";
+        System.out.println("Enter the value of n:");
+        int n = scanner.nextInt();
+        scanner.close();
+        for (i = 1; i <= n; i++)
         {
-            System.out.println(l1.get(i));
+            int counter=0;
+            for(num =i; num>=1; num--)
+            {
+                if(i%num==0)
+                {
+                    counter = counter + 1;
+                }
+            }
+            if (counter ==2)
+            {
+                //Appended the Prime number to the String
+                primeNumbers = primeNumbers + i + " ";
+            }
         }
-        System.out.println(l1.contains(22));
+        System.out.println("Prime numbers from 1 to n are :");
+        System.out.println(primeNumbers);
 
     }
 }

@@ -1,17 +1,31 @@
 package DS;
 
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class DEMO {
     public static void main(String[] args) {
-     int arr[] = {1000,8,9,4,8,2};
-     Set <Integer> uni = new TreeSet<>();
-     for (int i=0;i<arr.length;i++)
-     {
-         uni.add(arr[i]);
-     }
-        for (Integer integer : uni) {
-            System.out.println(integer);
+        int nums[] = {10,4,6,7,3};
+        List<Integer> list = new ArrayList<>();
+        for (int i : nums) {
+            list.add(i);
         }
+        int tot = 0;
+        List<Integer> fin = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++) {
+            int prev = list.get(i);
+            for (int j = i+1; j < list.size(); j++) {
+                int sum = 0;
+                 sum*=list.get(i);
+                 tot = 0;
+                 tot*=prev;
+            }
+            list.add(tot);
+        }
+
+
     }
 }

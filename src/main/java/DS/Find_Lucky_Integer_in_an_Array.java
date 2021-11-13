@@ -1,33 +1,22 @@
 package DS;
 
 import javax.swing.plaf.IconUIResource;
-import java.util.HashSet;
+import java.util.*;
 
 public class Find_Lucky_Integer_in_an_Array {
     public static void main(String[] args) {
-        int arr[] = {2,2,2,3,4};
-        int dup[] = new int[arr.length];
-        int j=0;
-        HashSet <Integer> hr = new HashSet<>();
-        for (int i : arr)
-        {
-            if(!hr.contains(i))
+        int arr[] = {1,2,2,3,3,3};
+        Map<Integer,Integer> map = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            map.put(arr[i],map.getOrDefault(arr[i],0)+1);
+        }
+        int max=0;
+        for (Integer i : map.keySet()) {
+            if(i==map.get(i))
             {
-                    hr.add(i);
-            }
-            else
-            {
-                dup[j]=i;
-                j++;
-
+                max=Math.max(max,i);
             }
         }
-        int count=0;
-        for(j=0;j<dup.length;j++)
-        {
-            count=count+j;
-            System.out.println(dup[j]);
-        }
-        System.out.println(count);
+        System.out.println(max);
     }
 }
