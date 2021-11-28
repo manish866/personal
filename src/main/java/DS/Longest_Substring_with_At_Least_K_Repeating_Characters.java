@@ -1,6 +1,7 @@
 package DS;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Longest_Substring_with_At_Least_K_Repeating_Characters {
@@ -8,7 +9,7 @@ public class Longest_Substring_with_At_Least_K_Repeating_Characters {
         String s = "ababacb";
         int k = 3;
         int res = 0;
-        Map<Character,Integer> map = new HashMap();
+        LinkedHashMap<Character,Integer> map = new LinkedHashMap<>();
         for (char c : s.toCharArray()) {
             map.put(c, map.getOrDefault(c,0)+1);
         }
