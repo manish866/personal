@@ -7,9 +7,10 @@ import java.util.Map;
 
 public class Bhargav_ANZ {
     public static void main(String[] args) {
+        List<Integer> result = new ArrayList<>();
+        int ar[] = {1, 1, 1, 4, 8, 10, 0, 0, 0, 0, 4, 8, -1, -1, -1, -1, -1, -1 };
         int startI = 0 ;
         int endJ = 0;
-        int ar[] = {1, 1, 1, 4, 8, 10, 0, 0, 0, 0, 4, 8, -1, -1, -1, -1, -1, -1 };
         int dif[] = new int[ar.length-1];
         int x = 0;
 
@@ -38,7 +39,8 @@ public class Bhargav_ANZ {
             }
         }
         for (int i = finalI; i <= endJ + 1; i++) {
-            System.out.print(ar[i]+" ");
+            int sex = ar[i];
+            result.add(sex);
         }
 
 
